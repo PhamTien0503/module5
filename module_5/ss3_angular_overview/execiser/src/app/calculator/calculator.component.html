@@ -1,0 +1,15 @@
+<div class="form-group w-25">
+  <label for="firstNumber">First Number</label>
+  <input #firstNumber type="number" id="firstNumber" class="form-control">
+</div>
+
+<div class="form-group  w-25">
+  <label for="secondNumber">Second Number</label>
+  <input #secondNumber type="number" id="secondNumber" class="form-control">
+</div>
+
+<button type="button" class="btn btn-primary ml-5" (click)="sum(firstNumber.value,secondNumber.value)">+</button>
+<button type="button" class="btn btn-primary ml-5" (click)="subtract(firstNumber.value,secondNumber.value)">-</button>
+<button type="button" class="btn btn-primary ml-5" (click)="multi(firstNumber.value,secondNumber.value)">x</button>
+<button type="button" class="btn btn-primary ml-5" (click)="divide(firstNumber.value,secondNumber.value)">/</button>
+<h3> Result: {{result}}</h3>
