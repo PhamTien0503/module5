@@ -9,6 +9,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FacilityListComponent } from './facility/facility-list/facility-list.component';
 import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
 import { FacilityUpdateComponent } from './facility/facility-update/facility-update.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
+import { CustomerUpdateComponent } from './customer/customer-update/customer-update.component';
+import { CreateComponent } from './contract/create/create.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { FacilityUpdateComponent } from './facility/facility-update/facility-upd
     NavbarComponent,
     FacilityListComponent,
     FacilityCreateComponent,
-    FacilityUpdateComponent
+    FacilityUpdateComponent,
+    CustomerListComponent,
+    CustomerCreateComponent,
+    CustomerUpdateComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
