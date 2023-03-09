@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Create Facility</title>
+</head>
+<body>
+<div class="d-flex justify-content-center">
+  <form class="w-50 border border-2 border-dark p-3 rounded"   method="post">
+    <div>
+      <button type="button" onclick="setDisplay('room')" class="btn btn-outline-success">ADD ROOM</button>
+      <button type="button" onclick="setDisplay('villa')" class="btn btn-outline-danger">ADD VILLA</button>
+      <button type="button" onclick="setDisplay('house')"  class="btn btn-outline-primary">ADD HOUSE</button>
+    </div>
+    <div>
+      <p style="color: red"></p>
+    </div>
+
+    <div class="mb-3" style="display: none">
+      <label for="customerId" class="form-label">Id</label>
+      <input type="number" class="form-control" id="customerId" >
+    </div>
+
+    <div class="mb-3">
+      <label for="facilityName" class="form-label">facilityName</label>
+      <p style="color: red" ></p>
+      <input type="text" class="form-control" id="facilityName" >
+    </div>
+
+
+    <div class="mb-3">
+      <label for="facilityArea" class="form-label">facilityArea</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="facilityArea" >
+    </div>
+
+    <div class="mb-3">
+      <label for="rentCost" class="form-label">rentCost</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="rentCost" >
+    </div>
+
+    <div class="mb-3"  id="maxPeople1">
+      <label for="maxPeople" class="form-label">maxPeople</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="maxPeople" >
+    </div>
+
+    <div class="mb-3" id="standardRoom1">
+      <label for="standardRoom" class="form-label">standardRoom</label>
+      <p style="color: red" ></p>
+      <input type="text" class="form-control" id="standardRoom" >
+    </div>
+
+    <div class="mb-3" id="descriptionOtherConvenience1">
+      <label for="descriptionOtherConvenience" class="form-label">descriptionOtherConvenience</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="descriptionOtherConvenience"
+      >
+    </div>
+
+    <div class="mb-3" id="poolArea1">
+      <label for="poolArea" class="form-label">poolArea</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="poolArea" >
+    </div>
+
+    <div class="mb-3" id="numberOfFloors1">
+      <label for="numberOfFloors" class="form-label">numberOfFloors</label>
+      <p style="color: red" ></p>
+      <input type="number" class="form-control" id="numberOfFloors" >
+    </div>
+
+    <div class="mb-3" id="facilityFree1">
+      <label for="facilityFree" class="form-label">facilityFree</label>
+      <p style="color: red" ></p>
+      <input type="text" class="form-control" id="facilityFree" >
+    </div>
+
+    <div id="facilityType1">
+      <label for="facilityType" class="form-label">Facility Type</label>
+      <p style="color: red" ></p>
+      <select class="form-select" aria-label="Default select example" id="facilityType">
+        <option ></option>
+      </select>
+    </div>
+
+    <div id="rentType1">
+      <label for="rentType" class="form-label">Rent Type</label>
+      <p style="color: red" ></p>
+      <select class="form-select" aria-label="Default select example" id="rentType">
+        <option ></option>
+      </select>
+    </div>
+
+    <div>
+      <button class="btn btn-outline-success" type="submit">SAVE</button>
+    </div>
+  </form>
+</div>
+
+</body>
+<script>
+  function setDisplay(typeFacility){
+    switch (typeFacility){
+      case "villa":
+        document.getElementById("poolArea1").style.display='block';
+        document.getElementById("descriptionOtherConvenience1").style.display='block';
+        document.getElementById("numberOfFloors1").style.display='block';
+        document.getElementById("standardRoom1").style.display='block';
+        document.getElementById("facilityFree1").style.display='none';
+        break;
+      case "room":
+        document.getElementById("poolArea1").style.display='none';
+        document.getElementById("descriptionOtherConvenience1").style.display='none';
+        document.getElementById("numberOfFloors1").style.display='none';
+        document.getElementById("standardRoom1").style.display='none';
+        document.getElementById("facilityFree1").style.display='block';
+
+        break;
+      case "house":
+        document.getElementById("poolArea1").style.display='none';
+        document.getElementById("facilityFree1").style.display='none';
+        document.getElementById("descriptionOtherConvenience1").style.display='block';
+        document.getElementById("numberOfFloors1").style.display='block';
+        document.getElementById("facilityFree1").style.display='block';
+        break;
+    }
+  }
+</script>
+</html>
+
