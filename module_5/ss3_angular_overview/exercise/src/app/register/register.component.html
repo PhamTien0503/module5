@@ -1,0 +1,82 @@
+<div class="d-flex justify-content-center">
+
+  <form [formGroup]="formRegister" (ngSubmit)="register()" class="w-50 border border-2 border-dark rounded p-3 ">
+    <h2 class="text-warning text-center">Register </h2>
+    <div class="form-group">
+      <label for="email">email</label>
+      <input type="email" class="form-control" formControlName="email" id="email">
+      <p class="text-danger" *ngIf="formRegister.controls.email.touched&&formRegister.controls.email?.errors?.required">
+        Khong duoc de trong</p>
+      <p class="text-danger" *ngIf="formRegister.controls.email.touched&&formRegister.controls.email?.errors?.email">
+        Sai dinh dang email</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" class="form-control" formControlName="password" id="password">
+      <p *ngIf="formRegister.controls.password.touched && formRegister.controls.password?.errors?.required"
+         class="text-danger">
+        Khong duoc de trong</p><br>
+      <p *ngIf="formRegister.controls.password.touched && formRegister.controls.password?.errors?.minlength"
+         class="text-danger">
+        Toi thieu 6 ki tu</p>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword">
+      <p class="text-danger"
+         *ngIf="formRegister.controls.confirmPassword.touched&&formRegister.controls.confirmPassword?.errors?.required">
+        Khong duoc de trong</p><br>
+      <p class="text-danger"
+         *ngIf="formRegister.controls.confirmPassword.touched&&formRegister.controls.confirmPassword?.errors?.minlength">
+      <p class="text-danger" *ngIf="formRegister.controls.confirmPassword.touched&&
+      formRegister.controls.confirmPassword.value!=formRegister.controls.password.value!">
+        Phai giong nhau</p>
+    </div>
+
+    <div class="form-group">
+      <label for="country">country</label>
+      <select class="form-control" formControlName="country" id="country">
+        <option>Da Nang</option>
+        <option>Quang Nam</option>
+        <option>Hue</option>
+      </select>
+      <p class="text-danger"
+         *ngIf="formRegister.controls.country.touched&&formRegister.controls.country?.errors?.required">
+        Khong duoc de trong</p><br>
+    </div>
+
+    <div class="form-group">
+      <label for="age">age</label>
+      <input type="number" class="form-control" formControlName="age" id="age">
+      <p class="text-danger" *ngIf="formRegister.controls.age.touched&&formRegister.controls.age?.errors?.min">Lon hon
+        18 tuoi </p>
+    </div>
+
+
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" formControlName="gender" id="gender" value="true"> Nam
+        <input type="radio" class="form-check-input" formControlName="gender" id="gender1" value="false"> Nu
+      </label>
+      <p class="text-danger"
+         *ngIf="formRegister.controls.gender.touched&&formRegister.controls.gender?.errors?.required">
+        Khong duoc de trong</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="phone">phone</label>
+      <input type="phone" class="form-control" formControlName="phone" id="phone">
+      <p class="text-danger" *ngIf="formRegister.controls.phone.touched&&formRegister.controls.phone?.errors?.required">
+        Khong duoc de trong</p>
+      <p class="text-danger" *ngIf="formRegister.controls.phone.touched&&formRegister.controls.phone?.errors?.pattern">
+        Sai dinh dang</p>
+    </div>
+
+    <button [disabled]="formRegister.invalid" type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+

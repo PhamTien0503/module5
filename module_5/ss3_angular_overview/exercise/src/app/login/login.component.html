@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+
+  <form [formGroup]="formRegister" (ngSubmit)="register()" class="w-50 border border-2 border-dark rounded p-3 ">
+    <h2 class="text-warning text-center">Login </h2>
+    <div class="form-group">
+      <label for="email">email</label>
+      <input type="email" class="form-control" formControlName="email" id="email">
+      <p class="text-danger" *ngIf="formRegister.controls.email.touched&&formRegister.controls.email?.errors?.required">
+        Khong duoc de trong</p>
+      <p class="text-danger" *ngIf="formRegister.controls.email.touched&&formRegister.controls.email?.errors?.email">
+        Sai dinh dang email</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" class="form-control" formControlName="password" id="password">
+      <p *ngIf="formRegister.controls.password.touched && formRegister.controls.password?.errors?.required"
+         class="text-danger">
+        Khong duoc de trong</p><br>
+      <p *ngIf="formRegister.controls.password.touched && formRegister.controls.password?.errors?.minlength"
+         class="text-danger">
+        Toi thieu 6 ki tu</p>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword">
+      <p class="text-danger"
+         *ngIf="formRegister.controls.confirmPassword.touched&&formRegister.controls.confirmPassword?.errors?.required">
+        Khong duoc de trong</p><br>
+      <p class="text-danger"
+         *ngIf="formRegister.controls.confirmPassword.touched&&formRegister.controls.confirmPassword?.errors?.minlength">
+      <p class="text-danger" *ngIf="formRegister.controls.confirmPassword.touched&&
+      formRegister.controls.confirmPassword.value!=formRegister.controls.password.value!">
+        Phai giong nhau</p>
+    </div>
+
+    <button [disabled]="formRegister.invalid" type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+
