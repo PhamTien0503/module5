@@ -11,7 +11,7 @@ export interface Facility {
   maxPeople?: number;
   rentType?: RentType;
   facilityType?: FacilityType;
-  standardRoom: string;
+  standardRoom?: string;
   descriptionOtherConvenience?: string;
   poolArea?: number;
   numberOfFloors?: number;

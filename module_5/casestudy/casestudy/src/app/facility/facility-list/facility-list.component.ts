@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Facility} from "../../../model/facility/facility";
+import {Facility} from '../../../model/facility/facility';
+
+
 
 @Component({
   selector: 'app-facility-list',
@@ -18,22 +20,27 @@ export class FacilityListComponent implements OnInit {
       maxPeople: 3
     },
     {
-      img: '../../../assets/img/kien-truc-furama-resort-da-nang-1024x680.jpg',
-      name: 'Villa',
-      cost: 1000020,
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 100000,
       area: 100,
       maxPeople: 3
     },
     {
-      img: '../../../assets/img/kien-truc-furama-resort-da-nang-1024x680.jpg',
-      name: 'Villa',
-      cost: 1000020,
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 100000,
       area: 100,
       maxPeople: 3
-    }
-  ]
-
-  ;
+    },
+    {
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 100000,
+      area: 100,
+      maxPeople: 3
+    },
+  ];
 
   constructor() {
   }

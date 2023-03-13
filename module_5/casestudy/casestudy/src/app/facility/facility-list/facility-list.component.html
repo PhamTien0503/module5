@@ -4,18 +4,7 @@
   <p class="centered" style="position: absolute; top: 50%; font-family: '.VnCentury Schoolbook';
     left: 50%; transform: translate(-50%, -50%); font-size: 50px;color: aliceblue">ROOMS & SUITES</p>
 </div><br>
-<div class="row">
-  <div class="card col-3" style="width: 18rem;">
-    <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">B1000</h5>
-      <p class="card-text">$1234</p>
-      <button type="button" class="btn btn-warning" data-bs-target="#edit" data-bs-toggle="modal">Edit
-      </button>
-      <button type="button" class="btn btn-danger" data-bs-target="#edit" data-bs-toggle="modal">Delete
-      </button>
-    </div>
-  </div>
+
   <div class="row">
     <div class="col 12 col-md-3 col-sm-6" *ngFor="let f of facility">
       <div class="card" style="width: 18rem;">
@@ -26,7 +15,9 @@
           <p class="card-text">Giá :  <span >{{f.cost}}</span></p>
           <p class="card-text">Diện tích :  <span >{{f.area}}</span></p>
           <p>Số người tối đa : <span>{{f.maxPeople}}</span></p>
-          <button type="button" class="btn btn-primary" data-bs-target="#edit" data-bs-toggle="modal">Create
+          <button type="button" class="btn btn-warning" data-bs-target="#edit" data-bs-toggle="modal">Edit
+        </button>
+          <button type="button" class="btn btn-danger" data-bs-target="#edit" data-bs-toggle="modal">Delete
           </button>
 
         </div>
@@ -39,4 +30,4 @@
   <span ></span>/<span></span>
   <a class="btn btn-primary">Next</a>
 </div>
-</div>
+
