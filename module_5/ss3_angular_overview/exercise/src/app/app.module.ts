@@ -16,6 +16,15 @@ import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { TodoComponent } from './todo/todo.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { TimelinesComponent } from './timelines/timelines.component';
+import {RouterModule} from '@angular/router';
+import { DictionaryPageComponent } from './dictionary-page/dictionary-page.component';
+import { DictionaryDetailComponent } from './dictionary-detail/dictionary-detail.component';
+import {AppRoutingModule} from './app-routing.module';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { ListProductComponent } from './list-product/list-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +41,21 @@ import { LoginComponent } from './login/login.component';
     RatingBarComponent,
     TodoComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    TimelinesComponent,
+    DictionaryPageComponent,
+    DictionaryDetailComponent,
+    CreateProductComponent,
+    ListProductComponent,
+    DeleteProductComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

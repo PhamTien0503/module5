@@ -1,0 +1,18 @@
+<table class="table" >
+  <thead>
+  <tr>
+    <th>no.</th>
+    <th>word</th>
+    <th>detail</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let it of words; index as i">
+    <td scope="row"> {{i}}</td>
+    <td>{{it.word}} </td>
+    <td>
+      <button type="button" class="btn btn-primary" routerLink="/dictionary/detail/{{it.word}}">detail</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
