@@ -14,6 +14,7 @@ import { CustomerCreateComponent } from './customer/customer-create/customer-cre
 import { CustomerUpdateComponent } from './customer/customer-update/customer-update.component';
 import { CreateComponent } from './contract/create/create.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ContractListComponent } from './contract/contract-list/contract-list.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

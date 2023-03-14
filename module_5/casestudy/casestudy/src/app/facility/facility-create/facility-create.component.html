@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="d-flex justify-content-center">
-  <form class="w-50 border border-2 border-dark p-3 rounded"   method="post">
+  <form class="w-50 border border-2 border-dark p-3 rounded"    [formGroup]="facilityFormCreate" (ngSubmit)="saveFacility()">
     <div>
       <button type="button" onclick="setDisplay('room')" class="btn btn-outline-success">ADD ROOM</button>
       <button type="button" onclick="setDisplay('villa')" class="btn btn-outline-danger">ADD VILLA</button>
@@ -23,78 +23,83 @@
 
     <div class="mb-3">
       <label for="facilityName" class="form-label">facilityName</label>
-      <p style="color: red" ></p>
-      <input type="text" class="form-control" id="facilityName" >
+      <input type="text" class="form-control" formControlName="name"  id="facilityName">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.name.touched && facilityFormCreate.controls.name?.errors?.required">Bạn không được bỏ trống</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.name.dirty && facilityFormCreate.controls.name?.errors?.pattern">Tên Không được chứa số</p>
     </div>
-
 
     <div class="mb-3">
       <label for="facilityArea" class="form-label">facilityArea</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="facilityArea" >
+      <input type="text"  class="form-control" formControlName="area" id="facilityArea">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.area.dirty && facilityFormCreate.controls.area?.errors?.min">Diện tích phải lớn hơn 0</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.area.touched && facilityFormCreate.controls.area?.errors?.required">Bạn không được để trống</p>
     </div>
-
     <div class="mb-3">
-      <label for="rentCost" class="form-label">rentCost</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="rentCost" >
+      <label for="Cost" class="col-form-label">Cost</label>
+      <input type="number"  class="form-control" formControlName="cost" id="Cost">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.cost.dirty && facilityFormCreate.controls.cost?.errors?.min">Số phải lớn hơn 0</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.cost.touched && facilityFormCreate.controls.cost?.errors?.required">Bạn không được để trống</p>
     </div>
-
     <div class="mb-3"  id="maxPeople1">
       <label for="maxPeople" class="form-label">maxPeople</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="maxPeople" >
+      <input type="number"  class="form-control" formControlName="maxPeople" id="maxPeople">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.maxPeople.dirty && facilityFormCreate.controls.maxPeople?.errors?.min">Số phải lớn hơn 0</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.maxPeople.touched && facilityFormCreate.controls.maxPeople?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div class="mb-3" id="standardRoom1">
       <label for="standardRoom" class="form-label">standardRoom</label>
-      <p style="color: red" ></p>
-      <input type="text" class="form-control" id="standardRoom" >
+      <input type="text"  class="form-control" formControlName="standardRoom" id="standardRoom">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.standardRoom.touched && facilityFormCreate.controls.standardRoom?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div class="mb-3" id="descriptionOtherConvenience1">
       <label for="descriptionOtherConvenience" class="form-label">descriptionOtherConvenience</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="descriptionOtherConvenience"
-      >
+      <input type="text"  class="form-control" formControlName="descriptionOtherConvenience" id="descriptionOtherConvenience">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.descriptionOtherConvenience.touched && facilityFormCreate.controls.descriptionOtherConvenience?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div class="mb-3" id="poolArea1">
       <label for="poolArea" class="form-label">poolArea</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="poolArea" >
+      <input type="number"  class="form-control" formControlName="poolArea" id="poolArea">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.poolArea.dirty && facilityFormCreate.controls.poolArea?.errors?.min">Số phải lớn hơn 0</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.poolArea.touched && facilityFormCreate.controls.poolArea?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div class="mb-3" id="numberOfFloors1">
       <label for="numberOfFloors" class="form-label">numberOfFloors</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="numberOfFloors" >
+      <input type="number"  class="form-control" formControlName="numberOfFloors" id="numberOfFloors">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.numberOfFloors.dirty && facilityFormCreate.controls.numberOfFloors?.errors?.min">Số phải lớn hơn 0</p>
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.numberOfFloors.touched && facilityFormCreate.controls.numberOfFloors?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div class="mb-3" id="facilityFree1">
       <label for="facilityFree" class="form-label">facilityFree</label>
-      <p style="color: red" ></p>
-      <input type="text" class="form-control" id="facilityFree" >
+      <input type="text"  class="form-control" formControlName="facilityFree" id="facilityFree" >
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.facilityFree.touched && facilityFormCreate.controls.facilityFree?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div id="facilityType1">
       <label for="facilityType" class="form-label">Facility Type</label>
-      <p style="color: red" ></p>
-      <select class="form-select" aria-label="Default select example" id="facilityType">
-        <option ></option>
+      <select class="form-select" aria-label="Default select example" formControlName="facilityType" id="facilityType">
+        <option *ngFor="let ft of facilityTypes" [ngValue]="ft">{{ft.facilityTypeName}}</option>
       </select>
     </div>
 
     <div id="rentType1">
       <label for="rentType" class="form-label">Rent Type</label>
-      <p style="color: red" ></p>
-      <select class="form-select" aria-label="Default select example" id="rentType">
-        <option ></option>
+      <select class="form-select" aria-label="Default select example" formControlName="rentType" id="rentType">
+        <option *ngFor="let r of rentTypes" [ngValue]="r">{{r.rentTypeName}}</option>
       </select>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="col-form-label">image</label>
+      <input type="text"  class="form-control" formControlName="img" id="img">
+      <p class="text-danger" *ngIf="facilityFormCreate.controls.img.touched && facilityFormCreate.controls.img?.errors?.required">Bạn không được để trống</p>
     </div>
 
     <div>
-      <button class="btn btn-outline-success" type="submit">SAVE</button>
+      <button [disabled]="facilityFormCreate.invalid" class="btn btn-outline-success" type="submit">SAVE</button>
     </div>
   </form>
 </div>
