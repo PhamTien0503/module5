@@ -10,5 +10,4 @@ export interface Customer {
   phoneNumber?: string;
   email?: string;
   address?: string;
-  flag?: boolean;
 }

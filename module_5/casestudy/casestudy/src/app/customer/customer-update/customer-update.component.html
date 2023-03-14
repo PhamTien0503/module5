@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-center">
-  <form class="w-50 border border-2 border-dark rounded p-3">
+  <form class="w-50 border border-2 border-dark rounded p-3" [formGroup]="customerFormCreate"
+        (ngSubmit)="updateCustomer()">
     <div class="mb-3">
       <label for="customerId" class="form-label">Id</label>
       <input type="number" class="form-control" id="customerId">
@@ -7,66 +8,92 @@
 
     <div class="mb-3">
       <label for="customerName" class="form-label">Name</label>
-      <p style="color: red"></p>
-      <input type="text" class="form-control" id="customerName" >
+      <input type="text" class="form-control" formControlName="id" id="customerName">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.id.touched && customerFormCreate.controls.id?.errors?.required">Bạn không
+        được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.id.dirty && customerFormCreate.controls.id?.errors?.pattern">Bạn phải nhập
+        đúng định dạng MH-XXXX(với x là số)</p>
     </div>
 
     <div>
       <label for="customerType" class="form-label">customerType</label>
-      <p style="color: red" ></p>
-      <select  class="form-select" aria-label="Default select example" id="customerType" >
-        <option></option>
+      <select class="form-select" aria-label="Default select example" formControlName="customerType" id="customerType">
+        <option *ngFor="let ct of customerTypes" [ngValue]="ct">{{ct.name}}</option>
       </select>
     </div>
 
     <div class="mb-3">
       <label for="customerBirthday" class="form-label">customerBirthday</label>
-      <p style="color: red" ></p>
-      <input type="date" class="form-control" id="customerBirthday">
+      <input type="date" class="form-control" formControlName="dateOfBirth" id="customerBirthday">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.dateOfBirth.touched && customerFormCreate.controls.dateOfBirth?.errors?.required">
+        Bạn không được bỏ trống</p>
+
     </div>
 
     <div class="mt-3 form-group">
       <label class="h6">Gender</label>
-      <p style="color: red" ></p>
+
       <div class="d-flex">
         <label class="d-block me-4">
-          <input type="radio" /> Nam
+          <input type="radio" formControlName="gender" [value]="true"/> Nam
           <i class="fa-solid fa-mars"></i>
         </label>
 
         <label class="d-block me-4">
-          <input type="radio"  /> Nữ
+          <input type="radio" formControlName="gender" [value]="false"/> Nữ
           <i class="fa-solid fa-venus"></i>
         </label>
       </div>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.gender.touched && customerFormCreate.controls.gender?.errors?.required">Bạn
+        không được bỏ trống</p>
+
     </div>
 
     <div class="mb-3">
       <label for="customerIdCard" class="form-label">customerIdCard</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="customerIdCard" >
+      <input required type="text" class="form-control" formControlName="idCard" id="customerIdCard">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.idCard.touched && customerFormCreate.controls.idCard?.errors?.required">Bạn
+        không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.idCard.dirty && customerFormCreate.controls.idCard?.errors?.pattern">Bạn
+        phải nhập đúng định 9 số hoăc 12 số</p>
+
     </div>
 
     <div class="mb-3">
-      <label for="customerPhone" class="form-label">customerPhone</label>
-      <p style="color: red" ></p>
-      <input type="number" class="form-control" id="customerPhone" >
+      <label for="customerPhone" class="form-label" id="customerPhone">customerPhone</label>
+      <input type="text" class="form-control" formControlName="phoneNumber">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.phoneNumber.touched && customerFormCreate.controls.phoneNumber?.errors?.required">
+        Bạn không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.phoneNumber.dirty && customerFormCreate.controls.phoneNumber?.errors?.pattern">
+        Bạn phải nhập đúng định dạng số điện thoại</p>
     </div>
 
     <div class="mb-3">
       <label for="customerEmail" class="form-label">customerEmail</label>
-      <p style="color: red" ></p>
-      <input type="text" class="form-control" id="customerEmail" >
+      <input type="text" class="form-control" formControlName="email" id="customerEmail">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.email.touched && customerFormCreate.controls.email?.errors?.required">Bạn
+        không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.email.dirty && customerFormCreate.controls.email?.errors?.email">Bạn phải
+        nhập đúng định dạng email</p>
     </div>
 
     <div class="mb-3">
-      <label for="customerAddress" class="form-label">customerAddress</label>
-      <p style="color: red"></p>
-      <input type="text" class="form-control" id="customerAddress" >
+      <label for="customerAddress" class="form-label" id="customerAddress">customerAddress</label>
+      <input type="text" class="form-control" formControlName="address">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.address.touched && customerFormCreate.controls.address?.errors?.required">
+        Bạn không được bỏ trống</p>
     </div>
-    <div>
-      <button class="btn btn-outline-success" type="submit" >Update</button>
-    </div>
+    <button class="btn btn-outline-success" type="submit"  [disabled]="customerFormCreate.invalid">Update</button>
   </form>
 </div>
-
