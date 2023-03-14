@@ -3,10 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {TimelinesComponent} from './timelines/timelines.component';
 import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
-import {ListProductComponent} from './list-product/list-product.component';
-import {CreateProductComponent} from './create-product/create-product.component';
-import {DeleteProductComponent} from './delete-product/delete-product.component';
-import {UpdateProductComponent} from './update-product/update-product.component';
+
 
 
 const routes: Routes = [
@@ -24,24 +21,19 @@ const routes: Routes = [
     component: DictionaryPageComponent
   },
   {
-    path: 'product/list',
-    component: ListProductComponent
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
   {
-    path: 'product/create',
-    component: CreateProductComponent
-  }, {
-    path: 'product/update/:id',
-    component: UpdateProductComponent
-  }, {
-    path: 'product/delete/:id',
-    component: DeleteProductComponent
-  },
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
+  }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
 }
+
+

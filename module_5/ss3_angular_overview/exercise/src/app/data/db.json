@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 6,
+      "name": "sdfasd",
+      "price": 23423,
+      "description": "1dfsdfs",
+      "category": {
+        "id": 3,
+        "name": "LG"
+      }
+    },
+    {
+      "id": 11,
+      "name": "sdf",
+      "price": 324234,
+      "description": "sdfsd",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "content": "Practice11",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "content": "Exercise111",
+      "complete": true
+    },
+    {
+      "id": 1,
+      "content": "Case study",
+      "complete": true
+    }
+  ]
+}

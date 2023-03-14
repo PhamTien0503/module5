@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from '../service/product.service';
+import {ProductService} from '../../service/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Product} from '../model/product';
+import {Product} from '../../model/product';
 
 @Component({
   selector: 'app-delete-product',
@@ -22,12 +22,14 @@ export class DeleteProductComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(paraMap => {
       this.id = parseInt(paraMap.get('id'), 10);
     });
-    this.productDelete = this.productService.findById(this.id);
+    this.productService.findProductById(this.id).subscribe(next => {
+      this.productDelete = next;
+    });
   }
 
   deleteProduct() {
-    this.productService.deleteProduct(this.id);
-    this.router.navigateByUrl('/product/list');
-
+    this.productService.deleteProductById(this.id).subscribe(next => {
+      this.router.navigateByUrl('/product/list');
+    });
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from '../model/product';
-import {ProductService} from '../service/product.service';
+import {Product} from '../../model/product';
+import {ProductService} from '../../service/product.service';
 
 
 @Component({
@@ -15,7 +15,9 @@ export class ListProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe(next => {
+      this.products = next;
+    });
   }
 
 }

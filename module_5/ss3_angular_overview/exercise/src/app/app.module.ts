@@ -1,30 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { ColorComponent } from './color/color.component';
+import {AppComponent} from './app.component';
+import {CalculatorComponent} from './calculator/calculator.component';
+import {ColorComponent} from './color/color.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ArticleComponent } from './article/article.component';
-import { LikeComponent } from './like/like.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { NameCardComponent } from './name-card/name-card.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
-import { RatingBarComponent } from './rating-bar/rating-bar.component';
-import { TodoComponent } from './todo/todo.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { TimelinesComponent } from './timelines/timelines.component';
+import {ArticleComponent} from './article/article.component';
+import {LikeComponent} from './like/like.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {FooterComponent} from './footer/footer.component';
+import {NameCardComponent} from './name-card/name-card.component';
+import {ProgressBarComponent} from './progress-bar/progress-bar.component';
+import {CountdownTimerComponent} from './countdown-timer/countdown-timer.component';
+import {RatingBarComponent} from './rating-bar/rating-bar.component';
+import {TodoComponent} from './todo/todo.component';
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {TimelinesComponent} from './timelines/timelines.component';
 import {RouterModule} from '@angular/router';
-import { DictionaryPageComponent } from './dictionary-page/dictionary-page.component';
-import { DictionaryDetailComponent } from './dictionary-detail/dictionary-detail.component';
+import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
+import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
 import {AppRoutingModule} from './app-routing.module';
-import { CreateProductComponent } from './create-product/create-product.component';
-import { ListProductComponent } from './list-product/list-product.component';
-import { DeleteProductComponent } from './delete-product/delete-product.component';
-import { UpdateProductComponent } from './update-product/update-product.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -45,19 +43,19 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     TimelinesComponent,
     DictionaryPageComponent,
     DictionaryDetailComponent,
-    CreateProductComponent,
-    ListProductComponent,
-    DeleteProductComponent,
-    UpdateProductComponent
+
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
