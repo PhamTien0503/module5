@@ -6,20 +6,19 @@
 </div><br>
 
   <div class="row">
-    <div class="col 12 col-md-3 col-sm-6" *ngFor="let f of facility">
+    <div class="col 12 col-md-3 col-sm-6" *ngFor="let facility of facility">
       <div class="card" style="width: 18rem;">
-        <img [src]="f.img" class="card-img-top" alt="...">
+        <img [src]="facility.img" class="card-img-top" alt="...">
 
         <div class="card-body">
-          <h5 class="card-title">{{f.name}}</h5>
-          <p class="card-text">Giá :  <span >{{f.cost}}</span></p>
-          <p class="card-text">Diện tích :  <span >{{f.area}}</span></p>
-          <p>Số người tối đa : <span>{{f.maxPeople}}</span></p>
+          <h5 class="card-title">{{facility.name}}</h5>
+          <p class="card-text">Giá :  <span >{{facility.cost}}</span></p>
+          <p class="card-text">Diện tích :  <span >{{facility.area}}</span></p>
+          <p>Số người tối đa : <span>{{facility.maxPeople}}</span></p>
           <button type="button" class="btn btn-warning" data-bs-target="#edit" data-bs-toggle="modal">Edit
         </button>
           <button type="button" class="btn btn-danger" data-bs-target="#edit" data-bs-toggle="modal">Delete
           </button>
-
         </div>
       </div>
     </div>

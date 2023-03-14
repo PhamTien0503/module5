@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Facility} from '../../../model/facility/facility';
 
 
-
 @Component({
   selector: 'app-facility-list',
   templateUrl: './facility-list.component.html',
@@ -15,31 +14,52 @@ export class FacilityListComponent implements OnInit {
     {
       img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
       name: 'room',
-      cost: 100000,
+      cost: 20000,
       area: 100,
       maxPeople: 3
     },
     {
       img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
       name: 'room',
-      cost: 100000,
+      cost: 20000,
       area: 100,
       maxPeople: 3
     },
     {
       img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
       name: 'room',
-      cost: 100000,
+      cost: 20000,
       area: 100,
       maxPeople: 3
     },
     {
       img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
       name: 'room',
-      cost: 100000,
+      cost: 20000,
       area: 100,
       maxPeople: 3
     },
+    {
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 20000,
+      area: 100,
+      maxPeople: 3
+    },
+    {
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 20000,
+      area: 100,
+      maxPeople: 3
+    },
+    {
+      img: 'https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg',
+      name: 'room',
+      cost: 20000,
+      area: 100,
+      maxPeople: 3
+    }
   ];
 
   constructor() {
@@ -47,5 +67,4 @@ export class FacilityListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
