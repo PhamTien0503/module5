@@ -35,11 +35,5 @@
       "name": "LG"
     }
   ],
-  "todos": [
-    {
-      "id": 3,
-      "content": "Execise Nhân 2",
-      "complete": "true"
-    }
-  ]
+  "todos": []
 }
