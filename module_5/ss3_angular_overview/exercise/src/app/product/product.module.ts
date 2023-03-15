@@ -10,17 +10,20 @@ import {DeleteProductComponent} from './delete-product/delete-product.component'
 
 
 @NgModule({
-  declarations: [
-    ListProductComponent,
-    CreateProductComponent,
-    UpdateProductComponent,
-    DeleteProductComponent
-  ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    ReactiveFormsModule
-  ]
+    declarations: [
+        ListProductComponent,
+        CreateProductComponent,
+        UpdateProductComponent,
+        DeleteProductComponent
+    ],
+    exports: [
+        ListProductComponent
+    ],
+    imports: [
+        CommonModule,
+        ProductRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class ProductModule {
 }

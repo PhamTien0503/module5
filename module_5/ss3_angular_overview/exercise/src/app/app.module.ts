@@ -7,7 +7,6 @@ import {ColorComponent} from './color/color.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ArticleComponent} from './article/article.component';
 import {LikeComponent} from './like/like.component';
-import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {NameCardComponent} from './name-card/name-card.component';
 import {ProgressBarComponent} from './progress-bar/progress-bar.component';
@@ -17,12 +16,14 @@ import {TodoComponent} from './todo/todo/todo.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {TimelinesComponent} from './timelines/timelines.component';
-import {RouterModule} from '@angular/router';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
 import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
+import {TodoEditComponent} from './todo/todo-edit/todo-edit.component';
+import {SharedModule} from './shared/shared.module';
+import {ImgSliderModule} from './img-slider/img-slider.module';
+import {ImgSlidedRoutingModule} from './img-slider/img-slided-routing.module';
 
 
 @NgModule({
@@ -32,7 +33,6 @@ import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
     ColorComponent,
     ArticleComponent,
     LikeComponent,
-    NavbarComponent,
     FooterComponent,
     NameCardComponent,
     ProgressBarComponent,
@@ -45,16 +45,16 @@ import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
     DictionaryPageComponent,
     DictionaryDetailComponent,
     TodoEditComponent,
-
-
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    ImgSliderModule,
+    ImgSlidedRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

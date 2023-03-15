@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
+  },
+  {
+    path: 'slider',
+    loadChildren: () => import('./img-slider/img-slider.module').then(module => module.ImgSliderModule)
   }
 ];
 @NgModule({
