@@ -13,7 +13,7 @@ import {NameCardComponent} from './name-card/name-card.component';
 import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import {CountdownTimerComponent} from './countdown-timer/countdown-timer.component';
 import {RatingBarComponent} from './rating-bar/rating-bar.component';
-import {TodoComponent} from './todo/todo.component';
+import {TodoComponent} from './todo/todo/todo.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {TimelinesComponent} from './timelines/timelines.component';
@@ -22,6 +22,7 @@ import {DictionaryPageComponent} from './dictionary-page/dictionary-page.compone
 import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {HttpClientModule} from '@angular/common/http';
     TimelinesComponent,
     DictionaryPageComponent,
     DictionaryDetailComponent,
+    TodoEditComponent,
 
 
   ],

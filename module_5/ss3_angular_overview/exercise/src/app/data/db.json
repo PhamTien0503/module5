@@ -37,19 +37,14 @@
   ],
   "todos": [
     {
-      "id": 1,
-      "content": "Practice11",
-      "complete": true
-    },
-    {
-      "id": 2,
-      "content": "Exercise111",
-      "complete": true
+      "id": 3,
+      "content": "Execise",
+      "complete": false
     },
     {
       "id": 1,
-      "content": "Case study",
-      "complete": true
+      "content": "dfsdf",
+      "complete": false
     }
   ]
 }

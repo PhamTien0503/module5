@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Todo} from '../todo';
+import {Todo} from '../../todo';
+import {TodoService} from '../../service/todo.service';
+import {Router} from '@angular/router';
 
 // tslint:disable-next-line:variable-name
 let _id = 1;
@@ -14,10 +16,14 @@ export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   content = new FormControl();
 
-  constructor() {
+  constructor(
+    private todoService: TodoService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
+    this.showAllTodo();
   }
 
   toggleTodo(i: number) {
@@ -32,9 +38,28 @@ export class TodoComponent implements OnInit {
         content: value,
         complete: false
       };
-      this.todos.push(todo);
+      this.todoService.saveTodo(todo).subscribe(() => {
+        this.showAllTodo();
+      }, e => {
+        console.log(e);
+      });
       this.content.reset();
     }
+  }
+  showAllTodo() {
+    this.todoService.getAll().subscribe(todos => {
+      this.todos = todos;
+    });
+  }
+
+
+  delete(id: number) {
+    this.todoService.deleteTodo(id).subscribe(() => {
+      this.showAllTodo();
+      alert('Xóa thành công');
+    }, e => {
+      console.log(e);
+    });
   }
 }
 

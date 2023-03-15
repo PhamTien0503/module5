@@ -8,6 +8,9 @@
         [class.complete]="todo.complete"
         *ngFor="let todo of todos; index as i">
       {{todo.content}}
+      <a class="btn " routerLink="/todos/edit/{{todo.id}}" role="button">Sửa</a>
+      <a class="btn" role="button" (click)="delete(todo.id)">Xóa</a>
     </li>
+
   </ul>
 </div>
