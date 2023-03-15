@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Facility} from "../../../model/facility/facility";
-import {Customer} from "../../../model/customer/customer";
-import {CustomerService} from "../../service/customer.service";
-import {FacilityService} from "../../service/facility.service";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Customer} from '../../../model/customer/customer';
+import {Facility} from '../../../model/facility/facility';
+import {CustomerService} from '../../service/customer.service';
+import {FacilityService} from '../../service/facility.service';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-contract-update',
+  templateUrl: './contract-update.component.html',
+  styleUrls: ['./contract-update.component.css']
 })
-export class CreateComponent implements OnInit {
-  formContractCreate: FormGroup;
+export class ContractUpdateComponent implements OnInit {
+  formContractUpdate: FormGroup;
   customers: Customer[];
   facilities: Facility[];
 
@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.customers = this.customerService.getAll();
     this.facilities = this.facilityService.getAll();
-    this.formContractCreate = new FormGroup({
+    this.formContractUpdate = new FormGroup({
       id: new FormControl('', [Validators.required]),
       startDate: new FormControl('', [Validators.required]),
       endDate: new FormControl('', [Validators.required]),
@@ -32,8 +32,7 @@ export class CreateComponent implements OnInit {
     });
   }
 
-
-  saveContract() {
-
+  updateContract() {
   }
 }
+

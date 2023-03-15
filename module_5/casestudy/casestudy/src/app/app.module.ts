@@ -15,6 +15,7 @@ import { CustomerUpdateComponent } from './customer/customer-update/customer-upd
 import { CreateComponent } from './contract/create/create.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ContractUpdateComponent } from './contract/contract-update/contract-update.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     CustomerUpdateComponent,
     CreateComponent,
     ContractListComponent,
+    ContractUpdateComponent,
   ],
   imports: [
     BrowserModule,

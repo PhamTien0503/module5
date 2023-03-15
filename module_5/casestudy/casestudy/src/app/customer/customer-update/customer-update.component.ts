@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomerType} from "../../../model/customer/customer-type";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CustomerService} from "../../service/customer.service";
-import {CustomerTypeService} from "../../service/customer-type.service";
+import {CustomerType} from '../../../model/customer/customer-type';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../../service/customer.service';
+import {CustomerTypeService} from '../../service/customer-type.service';
 
 @Component({
   selector: 'app-customer-update',

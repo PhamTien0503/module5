@@ -1,7 +1,6 @@
 <div class="d-flex justify-content-center">
-  <form class=" w-50  border border-2 border-success p-3 rounded formCSS" [formGroup]="formContractCreate"
-        (ngSubmit)="saveContract()">
-
+  <form class=" w-50  border border-2 border-success p-3 rounded formCSS" [formGroup]="formContractUpdate"
+        (ngSubmit)="updateContract()">
     <div class="form-group">
       <label for="">Id</label>
       <input type="number" id="" class="form-control" formControlName="id">
@@ -10,21 +9,21 @@
       <label for="startDate">Start Date</label>
       <input type="date" id="startDate" class="form-control" formControlName="startDate">
       <p class="text-danger"
-         *ngIf="formContractCreate.controls.startDate.touched&&formContractCreate.controls.startDate?.errors?.required">Khong duoc de trong</p>
+         *ngIf="formContractUpdate.controls.startDate.touched&&formContractUpdate.controls.startDate?.errors?.required">Khong duoc de trong</p>
     </div>
     <div class="form-group">
       <label for="endDate">End Date</label>
       <input type="date" id="endDate" class="form-control" formControlName="endDate">
       <p class="text-danger"
-         *ngIf="formContractCreate.controls.endDate.touched&&formContractCreate.controls.endDate?.errors?.required">Khong duoc de trong</p>
+         *ngIf="formContractUpdate.controls.endDate.touched&&formContractUpdate.controls.endDate?.errors?.required">Khong duoc de trong</p>
     </div>
     <div class="form-group">
       <label for="deposit">Deposit</label>
       <input type="number" id="deposit" class="form-control" formControlName="deposit">
       <p class="text-danger"
-         *ngIf="formContractCreate.controls.deposit.touched&&formContractCreate.controls.deposit?.errors?.required">Khong duoc de trong</p>
+         *ngIf="formContractUpdate.controls.deposit.touched&&formContractUpdate.controls.deposit?.errors?.required">Khong duoc de trong</p>
       <p class="text-danger"
-      *ngIf="formContractCreate.controls.deposit.dirty&&formContractCreate.controls.deposit?.errors?.pattern">
+         *ngIf="formContractUpdate.controls.deposit.dirty&&formContractUpdate.controls.deposit?.errors?.pattern">
         Phải là số nguyên dương
       </p>
     </div>
@@ -34,7 +33,7 @@
         <option *ngFor="let f of facilities" [ngValue]="f">{{f.name}}</option>
       </select>
       <p class="text-danger"
-         *ngIf="formContractCreate.controls.facility.touched&&formContractCreate.controls.facility?.errors?.required">Khong duoc de trong</p>
+         *ngIf="formContractUpdate.controls.facility.touched&&formContractUpdate.controls.facility?.errors?.required">Khong duoc de trong</p>
     </div>
     <div class="form-group">
       <label for="customer">Customer Name</label>
@@ -42,12 +41,11 @@
         <option *ngFor="let f of customers" [ngValue]="f">{{f.name}}</option>
       </select>
       <p class="text-danger"
-         *ngIf="formContractCreate.controls.customer.touched&&formContractCreate.controls.customer?.errors?.required">Khong duoc de trong</p>
+         *ngIf="formContractUpdate.controls.customer.touched&&formContractUpdate.controls.customer?.errors?.required">Khong duoc de trong</p>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="formContractCreate.invalid">Save</button>
+    <button type="submit" class="btn btn-primary" [disabled]="formContractUpdate.invalid">Update</button>
   </form>
-
 </div>
 
 

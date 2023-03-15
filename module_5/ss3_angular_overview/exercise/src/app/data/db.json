@@ -35,5 +35,26 @@
       "name": "LG"
     }
   ],
-  "todos": []
+  "todos": [
+    {
+      "id": 1,
+      "content": "dfasdfs",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "content": "ádfsd",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "content": "ádfsda",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "content": "ádfsad",
+      "complete": false
+    }
+  ]
 }
