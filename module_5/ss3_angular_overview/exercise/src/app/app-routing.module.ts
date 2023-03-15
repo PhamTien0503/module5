@@ -3,6 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {TimelinesComponent} from './timelines/timelines.component';
 import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
+import {TodoEditComponent} from './todo/todo-edit/todo-edit.component';
+import {TodoComponent} from './todo/todo/todo.component';
 
 
 
@@ -19,6 +21,14 @@ const routes: Routes = [
   {
     path: 'dictionary',
     component: DictionaryPageComponent
+  },
+  {
+    path: 'todos/edit/:id',
+    component: TodoEditComponent
+  },
+  {
+    path: 'todos/list',
+    component: TodoComponent
   },
   {
     path: 'product',

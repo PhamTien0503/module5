@@ -1,1 +1,18 @@
-<p>todo-edit works!</p>
+<h3>Chỉnh sửa nội dung todo?</h3>
+<form [formGroup]="todoForm" (ngSubmit)="updateTodo()" >
+
+  <div class="form-group" style="display: none">
+    <label for="">Id</label>
+    <input type="text" name="" id="" class="form-control" formControlName="id">
+  </div>
+  <div class="form-group" >
+    <label for="content">Id</label>
+    <input type="text"  id="content" class="form-control" formControlName="content">
+  </div>
+  <div class="form-group" >
+    <label for="complete">Id</label>
+    <input type="text"  id="complete" class="form-control" formControlName="complete">
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+
+</form>

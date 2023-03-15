@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Todo} from '../../todo';
+import {Todo} from '../../model/todo';
 import {TodoService} from '../../service/todo.service';
 import {Router} from '@angular/router';
 
