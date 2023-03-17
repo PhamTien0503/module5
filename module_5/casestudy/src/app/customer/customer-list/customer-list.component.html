@@ -1,0 +1,93 @@
+<div class="justify-content-center">
+  <h1 class="text-center">List Customer</h1>
+  <form [formGroup]="formSearch" (ngSubmit)="searchCustomer()"class=" w-50  border border-2 border-success">
+    <div class="mb-3 ">
+      <label for="customerName" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="nameSearch" id="customerName">
+    </div>
+
+    <div>
+      <label for="customerType" class="form-label">customerType</label>
+      <select class="form-select" aria-label="Default select example" formControlName="customerTypeName" id="customerType">
+        <option *ngFor="let ct of customerTypes" [ngValue]="ct">{{ct.name}}</option>
+      </select>
+    </div>
+
+  </form>
+  <button type="button" class="btn btn-warning"><a routerLink="/customer/create">Add Customer</a></button>
+  <table class="table table-striped" id="tableCustomer">
+    <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Customer Type</th>
+      <th scope="col">Date of birth</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Id_card</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of customers | paginate: { itemsPerPage: 5, currentPage: p } ,index as i">
+      <td>{{(p-1)*5+i+1}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.customerType.name}}</td>
+      <td>{{c.dateOfBirth}}</td>
+      <td>
+        <ng-container *ngIf="c.gender === true">
+          Nam
+        </ng-container>
+        <ng-container *ngIf="!(c.gender === true)">
+          Nữ
+        </ng-container>
+      </td>
+      <td>{{c.idCard}}</td>
+      <td>{{c.phoneNumber}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.address}}</td>
+
+      <td class="text-center">
+        <a>
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2" routerLink="/customer/update/{{c.id}}">Edit</span>
+          </button>
+        </a>
+      </td>
+      <td class="text-center">
+        <button (click)="openModal(c.id,c.name)" type="button" class="btn btn-sm btn-primary btn-lg" data-toggle="modal" data-target="#delete">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete customer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h1>Tên: {{nameDelete}}</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="deleteCustomer()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

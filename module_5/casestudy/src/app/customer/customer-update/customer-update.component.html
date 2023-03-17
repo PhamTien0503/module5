@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <form *ngIf="customerFormCreate" class="w-50 border border-2 border-dark rounded p-3" [formGroup]="customerFormCreate"
+        (ngSubmit)="updateCustomer()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" formControlName="name" id="name">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.name.touched && customerFormCreate.controls.name?.errors?.required">Bạn
+        không
+        được bỏ trống</p>
+    </div>
+       <div>
+          <label for="customerType" class="form-label">customerType</label>
+          <select  formControlName="customerType" id="customerType">
+            <option selected>{{customer.customerType.name}}</option>
+            <option *ngFor="let ct of customerTypes" [ngValue]="ct">{{ct.name}}</option>
+          </select>
+          <p class="text-danger"
+             *ngIf="customerFormCreate.controls.customerType.touched && customerFormCreate.controls.customerType?.errors?.required">Bạn không
+            được bỏ trống</p>
+        </div>
+
+    <div class="mb-3">
+      <label for="customerBirthday" class="form-label">customerBirthday</label>
+      <input type="date" class="form-control" formControlName="dateOfBirth" id="customerBirthday">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.dateOfBirth.touched && customerFormCreate.controls.dateOfBirth?.errors?.required">
+        Bạn không được bỏ trống</p>
+
+    </div>
+
+    <div class="mt-3 form-group">
+      <label class="h6">Gender</label>
+
+      <div class="d-flex">
+        <label class="d-block me-4">
+          <input type="radio" formControlName="gender" [value]="true"/> Nam
+          <i class="fa-solid fa-mars"></i>
+        </label>
+
+        <label class="d-block me-4">
+          <input type="radio" formControlName="gender" [value]="false"/> Nữ
+          <i class="fa-solid fa-venus"></i>
+        </label>
+      </div>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.gender.touched && customerFormCreate.controls.gender?.errors?.required">Bạn
+        không được bỏ trống</p>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="customerIdCard" class="form-label">customerIdCard</label>
+      <input required type="text" class="form-control" formControlName="idCard" id="customerIdCard">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.idCard.touched && customerFormCreate.controls.idCard?.errors?.required">Bạn
+        không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.idCard.dirty && customerFormCreate.controls.idCard?.errors?.pattern">Bạn
+        phải nhập đúng định 9 số hoăc 12 số</p>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="customerPhone" class="form-label" id="customerPhone">customerPhone</label>
+      <input type="text" class="form-control" formControlName="phoneNumber">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.phoneNumber.touched && customerFormCreate.controls.phoneNumber?.errors?.required">
+        Bạn không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.phoneNumber.dirty && customerFormCreate.controls.phoneNumber?.errors?.pattern">
+        Bạn phải nhập đúng định dạng số điện thoại</p>
+    </div>
+
+    <div class="mb-3">
+      <label for="customerEmail" class="form-label">customerEmail</label>
+      <input type="text" class="form-control" formControlName="email" id="customerEmail">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.email.touched && customerFormCreate.controls.email?.errors?.required">Bạn
+        không được bỏ trống</p>
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.email.dirty && customerFormCreate.controls.email?.errors?.email">Bạn phải
+        nhập đúng định dạng email</p>
+    </div>
+
+    <div class="mb-3">
+      <label for="customerAddress" class="form-label" id="customerAddress">customerAddress</label>
+      <input type="text" class="form-control" formControlName="address">
+      <p class="text-danger"
+         *ngIf="customerFormCreate.controls.address.touched && customerFormCreate.controls.address?.errors?.required">
+        Bạn không được bỏ trống</p>
+    </div>
+    <button class="btn btn-outline-success" type="submit" [disabled]="customerFormCreate.invalid" (click)="updateCustomer()">Update</button>
+  </form>
+</div>
+

@@ -3,30 +3,24 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CustomerCreateComponent} from './customer-create/customer-create.component';
+import {CustomerListComponent} from './customer-list/customer-list.component';
+import {CustomerUpdateComponent} from './customer-update/customer-update.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { XeKhachComponent } from './xe-khach/xe-khach.component';
-import { XeKhachUpdateComponent } from './xe-khach-update/xe-khach-update.component';
-
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    XeKhachComponent,
-    XeKhachUpdateComponent
+    CustomerCreateComponent,
+    CustomerListComponent,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule,
-    FormsModule,
-
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

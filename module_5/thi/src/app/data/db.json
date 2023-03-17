@@ -1,0 +1,36 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Tien",
+      "dateOfBirth": "1994-05-04",
+      "gender": true,
+      "salary": 1000000,
+      "customerType": {
+        "id": 1,
+        "name": "vip"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tien",
+      "dateOfBirth": "1994-05-04",
+      "gender": true,
+      "salary": 1000000,
+      "customerType": {
+        "id": 2,
+        "name": "perfect"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "vip"
+    },
+    {
+      "id": 2,
+      "name": "perfect"
+    }
+  ]
+}

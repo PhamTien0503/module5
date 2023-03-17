@@ -1,0 +1,73 @@
+<form  class="w=50" *ngIf="formXe" [formGroup]="formXe" (ngSubmit)="update()">
+  <div class="form-group" >
+    <label for="bienSoXe">So Xe</label>
+    <input readonly type="number" id="bienSoXe"  class="form-control"formControlName="bienSoXe">
+  </div>
+
+  <div class="form-group" >
+    <label for="loaiXe">loaiXe</label>
+    <input type="text" id="loaiXe" class="form-control" formControlName="loaiXe">
+    <p class="text-danger"
+    *ngIf="formXe.controls.loaiXe.touched&&formXe.controls.loaiXe?.errors?.required"> khong duoc de trong </p>
+  </div>
+  <div class="form-group" >
+    <label for="tenNhaXe">tenNhaXe</label>
+    <input type="text" id="tenNhaXe" class="form-control" formControlName="tenNhaXe">
+    <p class="text-danger"
+    *ngIf="formXe.controls.tenNhaXe.touched&&formXe.controls.tenNhaXe?.errors?.required"> khong duoc de trong </p>
+  </div>
+
+  <div class="form-group">
+    <label for="diemDi">diemDi</label>
+    <select class="form-control" formControlName="diemDi" id="diemDi">
+      <option>Da Nang</option>
+      <option>Hue</option>
+      <option>Quang Nam</option>
+    </select>
+      <p class="text-danger"
+         *ngIf="formXe.controls.diemDi.touched&&formXe.controls.diemDi?.errors?.required"> khong duoc de trong </p>
+  </div>
+  <div class="form-group">
+    <label for="diemDen">diemDen</label>
+    <select class="form-control" formControlName="diemDen" id="diemDen">
+      <option>Da Nang</option>
+      <option>Hue</option>
+      <option>Quang Nam</option>
+    </select>
+      <p class="text-danger"
+         *ngIf="formXe.controls.diemDen.touched&&formXe.controls.diemDen?.errors?.required"> khong duoc de trong </p>
+  </div>
+  <div class="form-group" >
+    <label for="soDienThoai">soDienThoai</label>
+    <input type="text" class="form-control" id="soDienThoai" formControlName="soDienThoai">
+    <p class="text-danger"
+       *ngIf="formXe.controls.soDienThoai.touched&&formXe.controls.soDienThoai?.errors?.required"> khong duoc de trong </p>
+
+    <p class="text-danger"
+       *ngIf="formXe.controls.soDienThoai.touched&&formXe.controls.soDienThoai?.errors?.pattern"> chua dung dinh dang </p>
+  </div>
+  <div class="form-group" >
+    <label for="email">email</label>
+    <input type="text" class="form-control" id="email" formControlName="email">
+    <p class="text-danger"
+       *ngIf="formXe.controls.email.touched&&formXe.controls.email?.errors?.required"> khong duoc de trong </p>
+    <p class="text-danger"
+       *ngIf="formXe.controls.email.touched&&formXe.controls.email?.errors?.email"> chua dung dinh dang</p>
+  </div>
+  <div class="form-group" >
+    <label for="gioDi">gioDi</label>
+    <input type="text" class="form-control" id="gioDi" formControlName="gioDi">
+    <p class="text-danger"
+       *ngIf="formXe.controls.gioDi.touched&&formXe.controls.gioDi?.errors?.required"> khong duoc de trong </p>
+  </div>
+  <div class="form-group" >
+    <label for="gioDen">gioDen</label>
+    <input type="text" class="form-control" id="gioDen" formControlName="gioDen">
+    <p class="text-danger"
+       *ngIf="formXe.controls.gioDen.touched&&formXe.controls.gioDen?.errors?.required"> khong duoc de trong </p>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+
+
+</form>

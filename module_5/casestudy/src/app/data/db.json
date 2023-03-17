@@ -1,0 +1,46 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nhan Kuto",
+      "dateOfBirth": "2023-03-02",
+      "gender": false,
+      "idCard": "232131231233",
+      "phoneNumber": "0905123456",
+      "email": "NhanKube@gmail.com",
+      "address": "Gia Lai",
+      "customerType": {
+        "id": 2,
+        "name": "Vip"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nhan Kuto",
+      "dateOfBirth": "2023-03-02",
+      "gender": false,
+      "idCard": "232131231233",
+      "phoneNumber": "0905123456",
+      "email": "NhanKube@gmail.com",
+      "address": "Gia Lai",
+      "customerType": {
+        "id": 2,
+        "name": "Vip"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Vip"
+    },
+    {
+      "id": 3,
+      "name": "Normal"
+    }
+  ]
+}
