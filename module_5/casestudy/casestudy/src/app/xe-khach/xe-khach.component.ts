@@ -11,12 +11,12 @@ import {CoachService} from '../service/xe-khach.service';
 })
 export class XeKhachComponent implements OnInit {
   coaches: Coach[];
-  code: number;
+  code: string;
   id: number;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              private xeKhachService: CoachService) {
+              private coachService: CoachService) {
   }
 
   ngOnInit(): void {
@@ -25,12 +25,13 @@ export class XeKhachComponent implements OnInit {
   }
 
   getAll() {
-    this.xeKhachService.getAll().subscribe(next => {
+    this.coachService.getAll().subscribe(next => {
       this.coaches = next.content;
       console.log(this.coaches);
     });
   }
-  openModal(bienSoXe: number, id: number) {
+
+  openModal(bienSoXe: string, id: number) {
 
     this.code = bienSoXe;
     this.id = id;
@@ -38,7 +39,7 @@ export class XeKhachComponent implements OnInit {
   }
 
   delete() {
-    this.xeKhachService.deleteCoach(this.id).subscribe(next => {
+    this.coachService.deleteCoach(this.id).subscribe(next => {
       this.getAll();
       alert('xoa thanh cong');
       this.router.navigateByUrl('/xeKhach');

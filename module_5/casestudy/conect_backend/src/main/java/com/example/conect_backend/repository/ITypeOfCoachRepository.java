@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Transactional
 public interface ITypeOfCoachRepository extends JpaRepository<TypeOfCoach, Integer> {
   @Query(value = "select t.* from type_of_coach as t", nativeQuery = true)
-  Page findAll(Pageable pageable);
+  List<TypeOfCoach> findAll();
 }
