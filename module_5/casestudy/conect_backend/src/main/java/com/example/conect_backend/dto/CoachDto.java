@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 
 public class CoachDto implements Validator {
-  private int id;
+
   @NotBlank(message = "khong duoc de trong")
   private String code;
   private TypeOfCoach typeOfCoach;
@@ -20,9 +20,8 @@ public class CoachDto implements Validator {
   private String departureTime;
   private String arrivalTime;
 
-  public CoachDto(int id, String code, TypeOfCoach typeOfCoach, String companyName, String departure, String destination,
+  public CoachDto(String code, TypeOfCoach typeOfCoach, String companyName, String departure, String destination,
                   String phoneNumber, String email, String departureTime, String arrivalTime) {
-    this.id = id;
     this.code = code;
     this.typeOfCoach = typeOfCoach;
     this.companyName = companyName;
@@ -35,14 +34,6 @@ public class CoachDto implements Validator {
   }
 
   public CoachDto() {
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getCode() {

@@ -5,7 +5,6 @@ import {Coach} from '../model/xe-khach';
 import {TypeOfCoach} from "../model/type-of-coach";
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +16,7 @@ export class CoachService {
   getAll(): Observable<Coach[]> {
     return this.http.get<Coach[]>('http://localhost:8080/api/coach');
   }
+
   getAllTypeOfCoach(): Observable<TypeOfCoach[]> {
     return this.http.get<TypeOfCoach[]>('http://localhost:8080/api/coach/type');
   }
@@ -29,7 +29,11 @@ export class CoachService {
     return this.http.delete<Coach>(`http://localhost:8080/api/coach/${id}`);
   }
 
-  updateCoach(id: number, coach: Coach): Observable<Coach> {
-    return this.http.patch<Coach>(`http://localhost:8080/api/coach/${id}`, coach);
+  updateCoach(idCoach: number, coach: Coach): Observable<Coach> {
+    return this.http.patch<Coach>(`http://localhost:8080/api/coach/${idCoach}`, {...coach, id: idCoach});
+  }
+
+  saveCoach(coach: Coach): Observable<Coach> {
+    return this.http.post<Coach>('http://localhost:8080/api/coach', {...coach});
   }
 }

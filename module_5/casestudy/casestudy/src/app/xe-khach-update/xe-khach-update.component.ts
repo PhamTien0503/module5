@@ -4,7 +4,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CoachService} from '../service/xe-khach.service';
 import {Coach} from '../model/xe-khach';
-import {TypeOfCoach} from "../model/type-of-coach";
+import {TypeOfCoach} from '../model/type-of-coach';
 
 
 @Component({
@@ -15,7 +15,7 @@ import {TypeOfCoach} from "../model/type-of-coach";
 export class XeKhachUpdateComponent implements OnInit {
   formXe?: FormGroup;
   id: number;
-  xeUpdate: Coach;
+  coachUpdate: Coach;
   typeOfCoaches: TypeOfCoach[];
 
   constructor(private router: Router,
@@ -29,18 +29,19 @@ export class XeKhachUpdateComponent implements OnInit {
       this.xeKhachService.getAllTypeOfCoach().subscribe(a => {
         this.typeOfCoaches = a;
         this.xeKhachService.findById(this.id).subscribe(next => {
-          this.xeUpdate = next;
+          this.coachUpdate = next;
           this.formXe = new FormGroup({
-            code: new FormControl(this.xeUpdate.code),
-            typeOfCoach: new FormControl(this.xeUpdate.typeOfCoach, [Validators.required]),
-            companyName: new FormControl(this.xeUpdate.companyName, [Validators.required]),
-            departure: new FormControl(this.xeUpdate.departure, [Validators.required]),
-            destination: new FormControl(this.xeUpdate.destination, [Validators.required]),
-            phoneNumber: new FormControl(this.xeUpdate.phoneNumber, [Validators.required,
+            code: new FormControl(this.coachUpdate.code),
+            typeOfCoach: new FormControl(this.typeOfCoaches?.filter
+            (c => c.id === this.coachUpdate.typeOfCoach.id)[0], [Validators.required]),
+            companyName: new FormControl(this.coachUpdate.companyName, [Validators.required]),
+            departure: new FormControl(this.coachUpdate.departure, [Validators.required]),
+            destination: new FormControl(this.coachUpdate.destination, [Validators.required]),
+            phoneNumber: new FormControl(this.coachUpdate.phoneNumber, [Validators.required,
               Validators.pattern('^(090[0-9]{7}|093[0-9]{7}|097[0-9]{7})$')]),
-            email: new FormControl(this.xeUpdate.email, [Validators.required, Validators.email]),
-            departureTime: new FormControl(this.xeUpdate.departureTime, [Validators.required]),
-            arrivalTime: new FormControl(this.xeUpdate.arrivalTime, [Validators.required]),
+            email: new FormControl(this.coachUpdate.email, [Validators.required, Validators.email]),
+            departureTime: new FormControl(this.coachUpdate.departureTime, [Validators.required]),
+            arrivalTime: new FormControl(this.coachUpdate.arrivalTime, [Validators.required]),
           });
         });
       });
@@ -52,7 +53,7 @@ export class XeKhachUpdateComponent implements OnInit {
     console.log(xe);
     this.xeKhachService.updateCoach(this.id, xe).subscribe(next => {
       alert('update thanh cong');
-      this.router.navigateByUrl('/xeKhach');
+      this.router.navigateByUrl('/coach');
     });
   }
 }

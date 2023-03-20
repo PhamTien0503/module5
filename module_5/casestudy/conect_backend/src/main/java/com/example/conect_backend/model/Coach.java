@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Coach {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
   private String code;
   @ManyToOne
   @JoinColumn(name = "type_id", referencedColumnName = "id")
@@ -20,6 +20,19 @@ public class Coach {
   private String arrivalTime;
 
   public Coach() {
+  }
+
+  public Coach(String code, TypeOfCoach typeOfCoach, String companyName, String departure,
+               String destination, String phoneNumber, String email, String departureTime, String arrivalTime) {
+    this.code = code;
+    this.typeOfCoach = typeOfCoach;
+    this.companyName = companyName;
+    this.departure = departure;
+    this.destination = destination;
+    this.phoneNumber = phoneNumber;
+    this.email = email;
+    this.departureTime = departureTime;
+    this.arrivalTime = arrivalTime;
   }
 
   public int getId() {

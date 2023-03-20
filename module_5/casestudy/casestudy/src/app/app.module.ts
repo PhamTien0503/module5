@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { XeKhachComponent } from './xe-khach/xe-khach.component';
 import { XeKhachUpdateComponent } from './xe-khach-update/xe-khach-update.component';
+import { CoachCreateComponent } from './coach-create/coach-create.component';
 
 
 
@@ -17,7 +18,8 @@ import { XeKhachUpdateComponent } from './xe-khach-update/xe-khach-update.compon
   declarations: [
     AppComponent,
     XeKhachComponent,
-    XeKhachUpdateComponent
+    XeKhachUpdateComponent,
+    CoachCreateComponent
   ],
   imports: [
     BrowserModule,

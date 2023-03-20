@@ -25,7 +25,7 @@ public interface ICoachRepository extends JpaRepository<Coach, Integer> {
 
   @Modifying
 
-  @Query(value = "insert into coach as c (arrival_time,code,company_name,departure,departure_time ,destination,email,phone_number,type_id)" +
+  @Query(value = "insert into coach (arrival_time,code,company_name,departure,departure_time ,destination,email,phone_number,type_id)" +
     "values (:arrivalTime,:code,:companyName,:departure,:departureTime ,:destination,:email,:phoneNumber,:typeId)", nativeQuery = true)
   void saveCoach(
     @Param("arrivalTime") String arrivalTime,
